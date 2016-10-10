@@ -30,8 +30,8 @@
 				localStorageService.email = email;
     			
 
-}).error(function(data, status) {
-	if (status === 400) {
+			}).error(function(data, status) {
+				if (status === 400) {
 					// TODO subir erro de e-mail duplicado
 				} else {
 					// TODO erro da aplicação
@@ -39,7 +39,7 @@
 				vm.block = false;
 			});
 
-}
+		}
 
 });
 })(angular);
