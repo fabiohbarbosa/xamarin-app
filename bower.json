@@ -1,0 +1,29 @@
+{
+  "name": "xamarin-app",
+  "description": "",
+  "main": "app.js",
+  "authors": [
+    "fabiohbarbosa <fabiohbarbosa@gmail.com>"
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/gswteam/xamarin-app",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.8",
+    "bootstrap": "^3.3.7"
+  },
+  "overrides": {
+    "bootstrap": {
+      "main": [
+        "dist/css/bootstrap.css"
+      ]
+    }
+  }
+}

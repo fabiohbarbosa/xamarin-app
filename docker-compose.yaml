@@ -1,0 +1,5 @@
+mongo:
+  container_name: mongodb-xamarin-app
+  image: mongo
+  ports:
+  - 27017:27017
