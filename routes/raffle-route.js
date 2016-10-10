@@ -29,7 +29,7 @@ router.get(uri, function(req, res, next) {
       res.status(HttpStatus.FORBIDDEN).send();
       return;
     }
-    res.status(HttpStatus.OK).json(email);
+    res.status(HttpStatus.OK).json(email[0]);
   });
 });
 
