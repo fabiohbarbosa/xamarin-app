@@ -2,35 +2,34 @@
 
 	var app = angular.module('xamarin-app');
 
-	app.controller('DemoCtrl', function($http, $location,localStorageService,$interval) {
+	app.controller('DemoCtrl', function($http, $location, $interval) {
 		var url = 'https://xamarin-api.herokuapp.com/api';
 
-		localStorageService.email; 
 		var interval = $interval(function() {
 			chkSorteio();
 		}, 3000);
+
 		chkSorteio();
-		function chkSorteio(){
+
+		function chkSorteio() {
 			$http({
 				method: 'GET',
 				url: url+'/raffle',
 			}).success(function(data, status ) {
 				$location.path('/bolinha');
 				$interval.cancel(interval)
-			   //	$("#loading").fadeOut(500);		
+			   //	$("#loading").fadeOut(500);
 			   	//$("body").html('<h1>'+data.email+'</h1>');
 
 
 		 	}).error(function(data, status) {
 				if (status === 400) {
-								// TODO subir erro de e-mail duplicado
+					// TODO subir erro de e-mail duplicado
 				} else {
-								// TODO erro da aplicação
+					// TODO erro da aplicação
 				}
-					
 			});
+		}
+});
 
-}
-		});
-	
 })(angular);

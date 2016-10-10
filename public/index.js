@@ -1,7 +1,7 @@
 (function(angular) {
 
 	'use strict';
-	var app = angular.module('xamarin-app', ['ngRoute','LocalStorageModule']);
+	var app = angular.module('xamarin-app', ['ngRoute', 'LocalStorageModule']);
 
   app.config(function($routeProvider) {
   	var route = function(url, templateUrl, controller) {
@@ -16,9 +16,8 @@
     route('/bolinha', 'bolinha.html');
     route('/resultado', 'resultado.html');
 
-
     for (var i = 1; i <= 30; i++) {
-      route('/demo'+i, 'preload-animations/demo'+i+'.html');  
+      route('/demo'+i, 'preload-animations/demo'+i+'.html');
     }
 
   });
