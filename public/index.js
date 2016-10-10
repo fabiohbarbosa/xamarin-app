@@ -1,7 +1,7 @@
 (function(angular) {
 
 	'use strict';
-	var app = angular.module('xamarin-app', ['ngRoute']);
+	var app = angular.module('xamarin-app', ['ngRoute','LocalStorageModule']);
 
   app.config(function($routeProvider) {
   	var route = function(url, templateUrl, controller) {
