@@ -7,10 +7,11 @@
     "docker": "docker-compose up -d && sleep 2",
     "backend": "npm run docker && DEBUG=xamarin-app:* ./node_modules/.bin/nodemon",
     "frontend": "./node_modules/.bin/gulp",
-    "postinstall": "bower install && gulp inject"
+    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/gulp inject"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
+    "bower": "^1.7.9",
     "cookie-parser": "~1.4.3",
     "cors": "^2.8.1",
     "debug": "~2.2.0",
