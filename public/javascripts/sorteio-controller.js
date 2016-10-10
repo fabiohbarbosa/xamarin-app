@@ -6,7 +6,7 @@
 		init();
 
 		function init() {
-			vm.title = 'Teste';
+			vm.title = 'Sorteio!';
 			vm.salvar = salvar;
 		}
 

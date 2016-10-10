@@ -10,6 +10,7 @@
   			templateUrl: templateUrl
   		});
   	};
+		route('/', 'sorteio.html');
   	route('/sorteio', 'sorteio.html');
   	route('/aguardando', 'aguardando.html');
   	route('/bolinha', 'bolinha.html');
