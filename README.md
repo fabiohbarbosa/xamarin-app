@@ -1,5 +1,3 @@
-[ ![Codeship Status for gswteam/xamarin-app](https://codeship.com/projects/d5a7cb60-6f24-0134-a04a-4eee7f819805/status?branch=master)](https://codeship.com/projects/178021)
-
 ## URIs
 
 API foi hospedada no Heroku, usando MLabs para armazenar os dados no Mongo. Todos serviços estão presentes em: https://xamarin-api.herokuapp.com/
