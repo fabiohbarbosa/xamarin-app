@@ -25,7 +25,7 @@ router.get(uri, function(req, res, next) {
       return;
     }
 
-    if (!email) {
+    if (!email || email.length < 1) {
       res.status(HttpStatus.FORBIDDEN).send();
       return;
     }
