@@ -4,13 +4,15 @@
 	</div>
 	<div class="conteiner" ng-controller="SorteioCtrl as vm">
 		<h1>{{vm.title}}</h1>
-		<form action="" method="post">
+		<form>
 			<div class="row">
 				<label for="">E-mail</label>
-				<input type="text" name="email" id="email">
+				<input type="text" name="email" id="email" ng-model="vm.email">
 			</div>
 			<div class="row">
-				<button class="bt-participar">PARTICIPAR</button>
+				<button type="button" class="bt-participar" ng-click="vm.enviarEmail(vm.email)" ng-disabled="vm.block">
+					PARTICIPAR
+				</button>
 			</div>
 		</form>
 	</div>
