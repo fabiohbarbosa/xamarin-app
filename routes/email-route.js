@@ -8,6 +8,17 @@ var router = express.Router();
 
 var uri = '/api/email';
 
+router.get(uri, function(req, res, next) {
+  Email.find({}, function(err, emails) {
+    if (err) {
+      errHandler(err);
+      return;
+    }
+    debug('List all emails');
+    res.status(HttpStatus.OK).json(emails);
+  })
+});
+
 router.post(uri, function(req, res, next) {
   var emailBody = req.body.email;
 
