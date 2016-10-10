@@ -2,7 +2,7 @@
 
 ## URIs
 
-API foi hospedada no Heroku, usando MLabs para armazenar os dados no Mongo. Todos serviços estão presentes em: http://gsw-xamarin-app.herokuapp.com/
+API foi hospedada no Heroku, usando MLabs para armazenar os dados no Mongo. Todos serviços estão presentes em: https://xamarin-api.herokuapp.com/
 
 ---
 
