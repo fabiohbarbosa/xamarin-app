@@ -5,7 +5,8 @@
   "scripts": {
     "start": "npm run gulp && node ./bin/www",
     "gulp": "./node_modules/.bin/gulp inject",
-    "dev": "DEBUG=xamarin-app:* ./node_modules/.bin/nodemon"
+    "dev-linux": "DEBUG=xamarin-app:* ./node_modules/.bin/nodemon",
+    "dev": "node_modules/.bin/gulp inject && node_modules/.bin/nodemon frontend-server.js"
   },
   "dependencies": {
     "body-parser": "~1.15.1",
