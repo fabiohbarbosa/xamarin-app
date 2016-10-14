@@ -1,4 +1,4 @@
-(function(angular) {
+/*(function(angular) {
   var app = angular.module('xamarin-app');
 
   app.controller('BolinhaCtrl', function(localStorageService) {
@@ -58,3 +58,4 @@
 
   });
 })(angular);
+*/
