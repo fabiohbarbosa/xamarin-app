@@ -14,8 +14,8 @@
     route('/sorteio', 'sorteio.html');
     route('/aguardando', 'aguardando.html');
     route('/bolinha', 'bolinha.html');
+    route('/ganhador', 'ganhador.html');
     route('/resultado', 'resultado.html');
-
 
     for (var i = 1; i <= 30; i++) {
       route('/demo'+i, 'preload-animations/demo'+i+'.html');  

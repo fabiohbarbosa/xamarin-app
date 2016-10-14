@@ -1,17 +1,6 @@
 	<div id="content">
 		<div id="sphere"></div>
-		<ul>
-			<li>acceleration x: <span id="accelerationX"></span>g</li>
-			<li>acceleration y: <span id="accelerationY"></span>g</li>
-			<li>acceleration z: <span id="accelerationZ"></span>g</li>
-			<li>rotation alpha: <span id="rotationAlpha"></span>degree</li>
-			<li>rotation beta: <span id="rotationBeta"></span>degree</li>
-			<li>rotation gamma: <span id="rotationGamma"></span>degree</li>
-		</ul>
-		test: <span id="test"></span>
-		<div id="x"></div>
-		<div id="y"></div>
-
+		
 	</div>
 	<script type="text/javascript">
 
@@ -23,23 +12,22 @@
 
 	if (window.DeviceMotionEvent != undefined) {
 		window.ondevicemotion = function(e) {
-			ax = event.accelerationIncludingGravity.x * 5;
-			ay = event.accelerationIncludingGravity.y * 5;
+			ax = event.accelerationIncludingGravity.x * 0.5;
+			ay = event.accelerationIncludingGravity.y * 0.5;
 			document.getElementById("accelerationX").innerHTML = e.accelerationIncludingGravity.x;
 			document.getElementById("accelerationY").innerHTML = e.accelerationIncludingGravity.y;
 			document.getElementById("accelerationZ").innerHTML = e.accelerationIncludingGravity.z;
 
-			if ( e.rotationRate ) {
+		if ( e.rotationRate ) {
 				document.getElementById("rotationAlpha").innerHTML = e.rotationRate.alpha;
 				document.getElementById("rotationBeta").innerHTML = e.rotationRate.beta;
 				document.getElementById("rotationGamma").innerHTML = e.rotationRate.gamma;
 		}		
 	}
-
 	setInterval( function() {
 		var landscapeOrientation = window.innerWidth/window.innerHeight > 1;
 
-		if ( landscapeOrientation) {
+		if (landscapeOrientation) {
 			vx = vx + ay;
 			vy = vy + ax;
 		} else {
@@ -57,27 +45,33 @@
 		sphere.style.left = x + "px";
 		document.getElementById("y").innerHTML = y;
 		document.getElementById("x").innerHTML = x;
-		
-
 	}, 25);
-} 
+} else{
+	alert("teste");
+}
 
 
 function boundingBoxCheck(){
 	if (x<0) { x = 0; 
 		document.body.style.backgroundColor = 'green';
-		vx = -vx; }
-		if (y<0) { y = 0; vy = -vy;
-			document.body.style.backgroundColor = 'blue';
+		vx = -vx; 
+	}
+	if (y < 0) { 
+		y = 0;
+		vy = -vy;
+		document.body.style.backgroundColor = 'blue';
+	}
+	if (x > document.documentElement.clientWidth-20) { 
+		
+		document.body.style.backgroundColor = 'orange';
+		x = document.documentElement.clientWidth-20; 
+		vx = -vx; 
+	}
+	if (y > document.documentElement.clientHeight-20) {
+		document.body.style.backgroundColor = 'red';
+		y = document.documentElement.clientHeight-20; vy = -vy;
 		}
-		if (x>document.documentElement.clientWidth-20) { 
-			document.body.style.backgroundColor = 'orange';
-			x = document.documentElement.clientWidth-20; vx = -vx; 
-		}
-		if (y>document.documentElement.clientHeight-20) {
-			document.body.style.backgroundColor = 'red';
-			y = document.documentElement.clientHeight-20; vy = -vy; }
 
-		}
+	}
 
-		</script>
+</script>

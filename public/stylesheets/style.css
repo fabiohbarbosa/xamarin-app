@@ -19,7 +19,7 @@ html, body {
 body{
 	background: #333;
 }
-#tudo{
+.main{
 	max-width: 1024px;
 	width: 100%;
 	margin: 0 auto;
@@ -79,7 +79,10 @@ input{
 	letter-spacing: 1px;
 }
 
-	
+#loading{
+	left: 0;
+	top: 0;
+}
 #sphere {
 	position: absolute;	
 	width: 50px;
@@ -94,4 +97,35 @@ input{
 	background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(191,191,191,1) 100%);
 	background: radial-gradient(ellipse at center, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(191,191,191,1) 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#bfbfbf', GradientType=1 );
+	left: 50%;
+	top: 50%;
+	margin-left: -25px;
+	margin-top: -25px;
+}
+.ganhador{
+	background: #4e772c;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+}
+.perdedor{
+	background: #c40f0f;
+	text-align: center;
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
+}
+.ganhador img, .perdedor img{
+	max-width: 100%;
+	height: auto;
+	margin-bottom: 1.5em;
 }
