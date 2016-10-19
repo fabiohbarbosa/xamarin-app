@@ -20,7 +20,7 @@ router.delete(uri, function(req, res, next) {
 });
 
 router.get(uri, function(req, res, next) {
-  Email.find({ raffled: true }, { email: true }, function(err, email) {
+  Email.find({ raffled: true }, { email: true, number: true }, function(err, email) {
     if (err) {
       errHandler(err, req);
       return;
