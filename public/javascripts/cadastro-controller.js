@@ -34,7 +34,7 @@
 				vm.block = false;
 
 				$sessionStorage.email = email;
-
+			console.log(status);
 
 			}).error(function(data, status) {
 				if (status === 400) {
@@ -42,6 +42,7 @@
 				} else {
 					// TODO erro da aplicação
 				}
+				console.log(status);
 				vm.block = false;
 			});
 
