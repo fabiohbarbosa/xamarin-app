@@ -10,15 +10,17 @@
   		});
   	};
 
-    route('/', 'sorteio.html');
-    route('/sorteio', 'sorteio.html');
-    route('/aguardando', 'aguardando.html');
-    route('/bolinha', 'bolinha.html');
-    route('/ganhador', 'ganhador.html');
-    route('/resultado', 'resultado.html');
+    route('/', 						'view/sorteio.html');
+    route('/sorteio', 		'view/sorteio.html');
+    route('/aguardando', 	'view/aguardando.html');
+		route('/resultado', 	'view/resultado.html')
+
+		for (var i = 1 <= 4) {
+			route('/ganhador'+i, 'view/ganhador'+i+'.html');
+		}
 
     for (var i = 1; i <= 30; i++) {
-      route('/demo'+i, 'preload-animations/demo'+i+'.html');
+      route('/demo'+i, 'view/preload-animations/demo'+i+'.html');
     }
 
   });

@@ -30,6 +30,7 @@ router.post(uri, function(req, res, next) {
 
   var request = new Email();
   request.email = emailBody;
+  request.raffled = false;
 
   request.save(function(err) {
     if (err && err.code === 11000) {
