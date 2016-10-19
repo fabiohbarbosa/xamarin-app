@@ -43,7 +43,8 @@ router.post(uri, function(req, res, next) {
 
     startRaffle(function(err2, email) {
       if (err2) {
-        errHandler(err, req);
+        debug(err2);
+        errHandler(err, res);
         return;
       }
       res.status(HttpStatus.OK).json(email);
@@ -55,15 +56,27 @@ router.post(uri, function(req, res, next) {
 function startRaffle(callback) {
   Email.find({}, { email: true }, function(err, emails) {
     if (err) {
-      callback(err)
+      callback(err, null)
+      return;
+    }
+
+    if (emails.length === 0) {
+      callback('Invalid e-mails', null)
       return;
     }
 
     var winners = [];
     var winnersInt = [];
     var number = 1;
+    var totalRaffle = 0;
 
-    while(winnersInt.length != 4) {
+    if (emails.length >= 4) {
+      totalRaffle = 4;
+    } else {
+      totalRaffle = emails.length;
+    }
+
+    while(winnersInt.length != totalRaffle) {
       var rand = _.random(emails.length-1);
       while(!_.includes(winnersInt, rand)) {
         winnersInt.push(rand);
