@@ -29,17 +29,27 @@
 				url: url+'/raffle',
 			}).success(function(data, status) {
 				console.log('Sorteio efetuado!');
+				console.log('Data:');
 				console.log(data);
+				console.log('Storage: '+ storage);
 
 				$interval.cancel(interval);
 
+				var path = undefined;
 				for (var i = 0; i < data.length; i++) {
 					if(storage === data[i].email) {
-						$location.path('/ganhador'+data[i].number);
+						path = '/ganhador'+data[i].number;
 						$sessionStorage.winner = true;
 					}
+
+					if (i+1 == data.length) {
+						if (path) {
+							$location.path(path);
+						} else {
+							$location.path('/resultado');
+						}
+					}
 				}
-				$location.path('/resultado');
 		 	}).error(function(data, status) {
 				if (status === 403) {
 					console.log('Sorteio NÃO efetuado!');
