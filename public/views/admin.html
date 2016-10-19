@@ -1,0 +1,33 @@
+<div id="admin">
+	<div class="conteiner" ng-controller="AdminCtrl as vm">
+		<h1>{{vm.title}}</h1>
+		<form>
+			<div class="row">
+				<button type="button" class="bt-participar" ng-click="vm.raffle()" ng-disabled="vm.block">
+					SORTEAR
+				</button>
+				<br><br>
+				<button type="button" class="bt-cancelar" ng-click="vm.cancel()" ng-disabled="vm.block">
+					CANCELAR
+				</button>
+			</div>
+			<hr/>
+			<div class="row">
+				<table cellspacing="10" cellpadding="5">
+			    <colgroup span="7"></colgroup>
+
+			    <tbody>
+			      <tr>
+			        <th scope="col" title="Sorteio">Sorteio</th>
+			        <th scope="col" title="E-mail">Email</th>
+			      </tr>
+			      <tr ng-repeat="email in vm.emails| orderBy:'email'">
+			          <td> {{ email.number }} </td>
+								<td> {{ email.email }} </td>
+			      </tr>
+			  </tbody>
+			  </table>
+			</div>
+		</form>
+	</div>
+</div>

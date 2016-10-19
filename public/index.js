@@ -10,8 +10,9 @@
   		});
   	};
 
-    route('/', 						'views/sorteio.html');
-    route('/sorteio', 		'views/sorteio.html');
+    route('/', 						'views/cadastro.html');
+    route('/cadastro', 		'views/cadastro.html');
+		route('/admin', 			'views/admin.html');
     route('/aguardando', 	'views/aguardando.html');
 		route('/resultado', 	'views/resultado.html')
 

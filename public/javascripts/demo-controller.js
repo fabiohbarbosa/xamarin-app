@@ -17,19 +17,18 @@
 				method: 'GET',
 				url: url+'/raffle',
 			}).success(function(data, status) {
-				console.log(storage);
 				console.log('Sorteio efetuado!');
 				console.log(data);
 
 				$interval.cancel(interval);
 
 				for (var i = 0; i < data.length; i++) {
-					console.log(data[i].email);
 					if(storage === data[i].email) {
 						$location.path('/ganhador'+data[i].number);
+						$sessionStorage.winner = true;
 					}
 				}
-				// $location.path('/resultado');
+				$location.path('/resultado');
 		 	}).error(function(data, status) {
 				if (status === 403) {
 					console.log('Sorteio NÃO efetuado!');

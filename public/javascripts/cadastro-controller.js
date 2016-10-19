@@ -2,7 +2,7 @@
 (function(angular) {
 	var app = angular.module('xamarin-app');
 
-	app.controller('SorteioCtrl', function($http, $location, $sessionStorage) {
+	app.controller('CadastroCtrl', function($http, $location, $sessionStorage) {
 		var vm = this;
 		var url = 'https://xamarin-api.herokuapp.com/api';
 

@@ -24,13 +24,14 @@ body{
 	width: 100%;
 	margin: 0 auto;
 	min-height: 100%;
+	color: #fff;
+	padding-bottom: 20px;
 	background: url("./img/background1.jpg");
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
-	color: #fff;
-	padding-bottom: 20px;
 }
+
 .logo-evento {
 	text-align: center;
 	padding: 30px 15px;
@@ -75,6 +76,18 @@ input{
 	width: 100%;
 	font-size: 1.25em;
 	letter-spacing: 1px;
+	cursor: pointer;
+}
+
+.bt-cancelar{
+	height: 60px;
+	color: #fff;
+	background: #d9534f;
+	border:1px solid #d9534f;
+	width: 100%;
+	font-size: 1.25em;
+	letter-spacing: 1px;
+	cursor: pointer;
 }
 
 #loading{

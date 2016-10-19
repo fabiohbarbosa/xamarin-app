@@ -2,15 +2,15 @@
 	<div class="logo-evento">
 		<img src="stylesheets/img/xamarin-logo.png" alt="">
 	</div>
-	<div class="conteiner" ng-controller="SorteioCtrl as vm">
+	<div class="conteiner" ng-controller="CadastroCtrl as vm">
 		<h1>{{vm.title}}</h1>
-		<form>
+		<form ng-submit="vm.enviarEmail(vm.email)">
 			<div class="row">
 				<label for="">E-mail</label>
 				<input type="text" name="email" id="email" ng-model="vm.email">
 			</div>
 			<div class="row">
-				<button type="button" class="bt-participar" ng-click="vm.enviarEmail(vm.email)" ng-disabled="vm.block">
+				<button type="button" class="bt-participar" ng-disabled="vm.block">
 					PARTICIPAR
 				</button>
 			</div>
