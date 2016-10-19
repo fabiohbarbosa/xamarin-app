@@ -8,6 +8,7 @@ var EmailSchema = new Schema({
     type: String,
     index: { unique: true }
   },
+  number: Integer,
   raffled: Boolean
 });
 

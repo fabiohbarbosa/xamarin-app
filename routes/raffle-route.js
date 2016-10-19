@@ -30,7 +30,7 @@ router.get(uri, function(req, res, next) {
       res.status(HttpStatus.FORBIDDEN).send();
       return;
     }
-    res.status(HttpStatus.OK).json(email[0]);
+    res.status(HttpStatus.OK).json(email);
   });
 });
 
@@ -78,13 +78,13 @@ function startRaffle(callback) {
     callback(null, winners);
 
     _.forEach(winners, function(winner) {
-      updateRaffle(winner.email);
+      updateRaffle(winner.email, winner.number);
     });
   });
 }
 
-function updateRaffle(email) {
-  Email.update({ email: email }, { raffled: true }, function(err) {
+function updateRaffle(email, number) {
+  Email.update({ email: email }, { raffled: true, number: number }, function(err) {
     if (err) {
       errHandler(err)
       return;
@@ -93,7 +93,7 @@ function updateRaffle(email) {
 }
 
 function deleteRaffle(callback) {
-  Email.update({}, { raffled: false }, { multi: true }, function(err) {
+  Email.update({}, { raffled: false, $unset: { number: 1 } }, { multi: true }, function(err) {
     if (err) {
       callback(err)
       return;
