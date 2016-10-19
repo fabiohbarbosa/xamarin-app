@@ -5,7 +5,9 @@
 	app.controller('DemoCtrl', function($http, $location, $interval, $sessionStorage) {
 		var storage = undefined;
 		var url = undefined;
-		
+
+		init();
+
 		function init() {
 			storage = $sessionStorage.email;
 			url = 'https://xamarin-api.herokuapp.com/api';
