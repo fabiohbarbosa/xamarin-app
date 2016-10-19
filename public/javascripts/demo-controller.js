@@ -3,8 +3,17 @@
 	var app = angular.module('xamarin-app');
 
 	app.controller('DemoCtrl', function($http, $location, $interval, $sessionStorage) {
-		var url = 'https://xamarin-api.herokuapp.com/api';
-		var storage = $sessionStorage.email;
+		var storage = undefined;
+		var url = undefined;
+		
+		function init() {
+			storage = $sessionStorage.email;
+			url = 'https://xamarin-api.herokuapp.com/api';
+
+			if (!$sessionStorage.email) {
+				$location.path('/');
+			}
+		}
 
 		var interval = $interval(function() {
 			chkSorteio();
