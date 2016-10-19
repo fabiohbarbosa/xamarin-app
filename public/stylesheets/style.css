@@ -135,10 +135,21 @@ input{
     left: 0;
     top: 0;
 }
-.ganhador img, .perdedor img{
+.ganhador img, .ganhador-2 img, .perdedor img{
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 1.5em;
+}
+.ganhador-2{
+	background: #b9e892;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
 }
 .animacaoBolinha {
     width: 100px;
