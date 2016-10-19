@@ -36,7 +36,7 @@ router.post(uri, function(req, res, next) {
     if (err && err.code === 11000) {
       debug('Email '+emailBody+ ' already exist');
       debug(err);
-      res.status(HttpStatus.BAD_REQUEST).send();
+      res.status(HttpStatus.NO_CONTENT).send();
       return;
     } else if (err) {
       errHandler(err);

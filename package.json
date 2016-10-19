@@ -5,9 +5,10 @@
   "scripts": {
     "start": "node ./bin/www",
     "docker": "docker-compose up -d && sleep 2",
-    "backend": "npm run docker && DEBUG=xamarin-app:* ./node_modules/.bin/nodemon",
-    "frontend": "./node_modules/.bin/gulp",
-    "postinstall": "./node_modules/.bin/bower install && ./node_modules/.bin/gulp inject"
+    "backend": "npm run inject && npm run docker && DEBUG=xamarin-app:* ./node_modules/.bin/nodemon",
+    "frontend": "npm run inject && ./node_modules/.bin/gulp",
+    "postinstall": "./node_modules/.bin/bower install && npm run inject",
+    "inject": "./node_modules/.bin/gulp inject"
   },
   "dependencies": {
     "body-parser": "~1.15.1",

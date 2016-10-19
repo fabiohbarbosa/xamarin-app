@@ -10,7 +10,7 @@ var router = express.Router();
 var uri = '/api/raffle';
 
 router.delete(uri, function(req, res, next) {
-  cancelRaffle(function(err) {
+  deleteRaffle(function(err) {
     if (err) {
       errHandler(err, req);
       return;
@@ -35,7 +35,7 @@ router.get(uri, function(req, res, next) {
 });
 
 router.post(uri, function(req, res, next) {
-  cancelRaffle(function(err) {
+  deleteRaffle(function(err) {
     if (err) {
       errHandler(err, req);
       return;
@@ -92,7 +92,7 @@ function updateRaffle(email) {
   });
 }
 
-function cancelRaffle(callback) {
+function deleteRaffle(callback) {
   Email.update({}, { raffled: false }, { multi: true }, function(err) {
     if (err) {
       callback(err)

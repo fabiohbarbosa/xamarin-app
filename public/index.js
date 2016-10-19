@@ -10,17 +10,17 @@
   		});
   	};
 
-    route('/', 						'view/sorteio.html');
-    route('/sorteio', 		'view/sorteio.html');
-    route('/aguardando', 	'view/aguardando.html');
-		route('/resultado', 	'view/resultado.html')
+    route('/', 						'views/sorteio.html');
+    route('/sorteio', 		'views/sorteio.html');
+    route('/aguardando', 	'views/aguardando.html');
+		route('/resultado', 	'views/resultado.html')
 
-		for (var i = 1 <= 4) {
-			route('/ganhador'+i, 'view/ganhador'+i+'.html');
+		for (var i = 1; i <= 4; i++) {
+			route('/ganhador'+i, 'views/ganhador'+i+'.html');
 		}
 
     for (var i = 1; i <= 30; i++) {
-      route('/demo'+i, 'view/preload-animations/demo'+i+'.html');
+      route('/demo'+i, 'views/preload-animations/demo'+i+'.html');
     }
 
   });
