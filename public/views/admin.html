@@ -2,32 +2,39 @@
 	<div class="conteiner" ng-controller="AdminCtrl as vm">
 		<h1>{{vm.title}}</h1>
 		<form>
-			<div class="row">
-				<button type="button" class="bt-participar" ng-click="vm.raffle()" ng-disabled="vm.block">
+				<ul>
+					<li><button type="button" class="bt" ng-click="vm.raffle()" ng-disabled="vm.block">
+						<img src="stylesheets/img/roleta.png" alt="roleta"><br>
 					SORTEAR
-				</button>
-				<br><br>
-				<button type="button" class="bt-cancelar" ng-click="vm.cancel()" ng-disabled="vm.block">
+				</button></li>
+					<li><button type="button" class="bt" ng-click="vm.cancel()" ng-disabled="vm.block">
+						<img src="stylesheets/img/roleta-del.png" alt="roleta-del"><br>
 					CANCELAR
-				</button>
-				<br><br>
-				<button type="button" class="bt-cancelar" ng-click="vm.delete()" ng-disabled="vm.block">
+				</button></li>
+					<li><button type="button" class="bt" ng-click="vm.delete()" ng-disabled="vm.block">
+						<img src="stylesheets/img/email-del.png" alt="email-del"><br>
 					DELETAR E-MAILS
-				</button>
-			</div>
+				</button></li>
+				</ul>			
+
+				
+				
+				
+				
+				
+			
 			<hr/>
 			<div class="row">
-				<table cellspacing="10" cellpadding="5">
+				<table cellspacing="10" cellpadding="5" id="table">
 			    <colgroup span="7"></colgroup>
-
 			    <tbody>
 			      <tr>
-			        <th scope="col" title="Sorteio">Sorteio</th>
-			        <th scope="col" title="E-mail">Email</th>
+			        	<th scope="col" title="Sorteio">Sorteio</th>
+			        	<th scope="col" title="E-mail">Email</th>
 			      </tr>
 			      <tr ng-repeat="email in vm.emails| orderBy:'email'">
-			          <td> {{ email.number }} </td>
-								<td> {{ email.email }} </td>
+			          	<td> {{ email.number }} </td>
+						<td> {{ email.email }} </td>
 			      </tr>
 			  </tbody>
 			  </table>

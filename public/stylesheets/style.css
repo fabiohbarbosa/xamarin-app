@@ -20,7 +20,7 @@ body{
 	background: #333;
 }
 .main{
-	max-width: 1024px;
+	/*max-width: 1024px;*/
 	width: 100%;
 	margin: 0 auto;
 	min-height: 100%;
@@ -42,9 +42,8 @@ body{
 }
 .conteiner{
 	width: 90%;
-	margin: 20px auto;
-	max-width: 400px;
-}
+	margin: 0px auto;
+	}
 
 .row,.conteiner h1{
 	margin-bottom: 1em;
@@ -135,10 +134,21 @@ input{
     left: 0;
     top: 0;
 }
-.ganhador img, .perdedor img{
+.ganhador img, .ganhador-2 img, .perdedor img{
 	max-width: 100%;
 	height: auto;
 	margin-bottom: 1.5em;
+}
+.ganhador-2{
+	background: #b9e892;
+    text-align: center;
+    color: #fff;
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    padding-top: 10%;
+    left: 0;
+    top: 0;
 }
 .animacaoBolinha {
     width: 100px;
@@ -174,4 +184,43 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     background-color: rgb(255, 255, 255);
     background-image: none;
     color: rgb(0, 0, 0);
+}
+
+
+#admin ul{
+	list-style: none;
+	
+	text-align: center;
+	max-width: 1024px;
+	width: 100%;
+	margin: 0 auto;
+}
+#admin ul li{
+	list-style: none;
+    display: inline-block;
+    width: 30%;
+    margin: 1%;
+}
+#admin .bt{
+	height: 300px;
+    color: #fff;
+    background: none;
+    border: 1px solid #fff;
+    width: 100%;
+    font-size: 1.25em;
+    letter-spacing: 1px;
+    cursor: pointer;
+    vertical-align: bottom;
+   
+    text-align: center;
+}
+#admin .bt img{
+	max-width: 100%;
+	height: auto;
+	
+}
+#admin #table {
+	width: 100%;
+	max-width: 1024px;
+	margin: 50px auto;
 }
