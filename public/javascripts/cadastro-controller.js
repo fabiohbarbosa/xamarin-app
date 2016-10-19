@@ -32,16 +32,10 @@
 				var rand = randomDemo();
 				$location.path('/demo'+rand);
 				vm.block = false;
-
 				$sessionStorage.email = email;
-
-
 			}).error(function(data, status) {
-				if (status === 400) {
-					// TODO subir erro de e-mail duplicado
-				} else {
-					// TODO erro da aplicação
-				}
+				console.error(data);
+				console.error(status);
 				vm.block = false;
 			});
 
