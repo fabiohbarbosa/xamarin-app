@@ -3,13 +3,16 @@
 		<h1>{{vm.title}}</h1>
 		<form>
 				<ul>
-					<li><button type="button" class="bt-participar" ng-click="vm.raffle()" ng-disabled="vm.block">
+					<li><button type="button" class="bt" ng-click="vm.raffle()" ng-disabled="vm.block">
+						<img src="stylesheets/img/roleta.png" alt="">
 					SORTEAR
 				</button></li>
-					<li><button type="button" class="bt-cancelar" ng-click="vm.cancel()" ng-disabled="vm.block">
+					<li><button type="button" class="bt" ng-click="vm.cancel()" ng-disabled="vm.block">
+						<img src="stylesheets/img/roleta-del.png" alt="">
 					CANCELAR
 				</button></li>
-					<li><button type="button" class="bt-cancelar" ng-click="vm.delete()" ng-disabled="vm.block">
+					<li><button type="button" class="bt" ng-click="vm.delete()" ng-disabled="vm.block">
+						<img src="stylesheets/img/email-del.png" alt="">
 					DELETAR E-MAILS
 				</button></li>
 				</ul>			
