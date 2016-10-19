@@ -43,8 +43,7 @@ body{
 .conteiner{
 	width: 90%;
 	margin: 0px auto;
-	max-width: 400px;
-}
+	}
 
 .row,.conteiner h1{
 	margin-bottom: 1em;
@@ -213,9 +212,15 @@ input:-webkit-autofill, textarea:-webkit-autofill, select:-webkit-autofill {
     cursor: pointer;
     vertical-align: bottom;
     line-height: 520px;
+    text-align: center;
 }
 #admin .bt img{
 	max-width: 100%;
 	height: auto;
-	display: block;
+	
+}
+#admin #table {
+	width: 100%;
+	max-width: 1024px;
+	margin: 50px auto;
 }
