@@ -20,6 +20,7 @@
 		}
 
 		function enviarEmail(email) {
+			alert("teste");
 			vm.block = true;
 			$http({
 				method: 'POST',
