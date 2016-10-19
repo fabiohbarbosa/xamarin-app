@@ -13,6 +13,7 @@
 			vm.emails = [];
 			vm.raffle = raffle;
 			vm.cancel = cancel;
+			vm.delete = deleteEmails;
 			loadEmails();
 		}
 
@@ -48,6 +49,18 @@
 			$http({
 				method: 'DELETE',
 				url: url+'/raffle'
+			}).success(function(data, status) {
+				loadEmails();
+			}).error(function(data, status) {
+				console.error(data);
+				console.error(status);
+			});
+		}
+
+		function deleteEmails() {
+			$http({
+				method: 'DELETE',
+				url: url+'/email'
 			}).success(function(data, status) {
 				loadEmails();
 			}).error(function(data, status) {
