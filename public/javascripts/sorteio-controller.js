@@ -1,7 +1,8 @@
+
 (function(angular) {
 	var app = angular.module('xamarin-app');
 
-	app.controller('SorteioCtrl', function($http, $location,localStorageService) {
+	app.controller('SorteioCtrl', function($http, $location, $sessionStorage) {
 		var vm = this;
 		var url = 'https://xamarin-api.herokuapp.com/api';
 
@@ -11,6 +12,11 @@
 			vm.block = false;
 			vm.title = 'Sorteio!';
 			vm.enviarEmail = enviarEmail;
+
+			if ($sessionStorage.email) {
+				var rand = randomDemo();
+				$location.path('/demo'+rand);
+			}
 		}
 
 		function enviarEmail(email) {
@@ -23,12 +29,12 @@
 				url: url+'/email',
 				data: { email: email }
 			}).success(function(status, data ) {
-				var rand = Math.floor((Math.random() * 30) + 1);
+				var rand = randomDemo();
 				$location.path('/demo'+rand);
 				vm.block = false;
-				
-				localStorageService.email = email;
-    			
+
+				$sessionStorage.email = email;
+
 
 			}).error(function(data, status) {
 				if (status === 400) {
@@ -41,5 +47,8 @@
 
 		}
 
+		function randomDemo() {
+			return Math.floor((Math.random() * 30) + 1);
+		}
 });
 })(angular);
