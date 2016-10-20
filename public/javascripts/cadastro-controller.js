@@ -13,7 +13,7 @@
 			vm.title = 'Sorteio!';
 			vm.enviarEmail = enviarEmail;
 
-			if ($sessionStorage.email &&  $sessionStorage.winner) {
+			if ($sessionStorage.email) {
 				var rand = randomDemo();
 				$location.path('/demo'+rand);
 			}
